@@ -1,10 +1,5 @@
-FROM ubuntu:16.04 
- 
-WORKDIR /mydir
+FROM devopsdockeruh/simple-web-service:alpine
 
-COPY script.sh .
+WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install sudo -y && apt-get install curl -y
-RUN chmod +x ./script.sh
-
-CMD ["/bin/bash"]
+CMD server
